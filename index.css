@@ -1,0 +1,42 @@
+.body{ 
+    background-color: rgb(206, 222, 215);
+
+    background-image: url(neda-astani-KWTkd7mHqKE-unsplash.jpg);
+}
+
+
+#main{
+
+    height:400px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: azure;
+    border: 2px  solid black;
+    border-radius:10px; 
+}
+
+#formdiv{
+   display:flex;
+
+   justify-content: center;
+}
+
+
+
+.buttondiv{
+    display:flex;
+    justify-content: center;
+}
+#mylocation-div{
+    margin-top:20px;
+}
+
+#search-div{
+   margin-top:20px;
+}
+#details-section{
+
+    margin-top:50px;
+}
+
