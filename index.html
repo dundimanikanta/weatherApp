@@ -14,7 +14,7 @@
    
     
 
-  <div class="container">
+  <div class="container " id="current-container">
     
    
    
@@ -49,7 +49,7 @@
               <div class="col-md-6" id="main">
                  <div>
                   <h1 id="locationName">Place</h1>
-                  <!-- <h5 id="time">time</h5> -->
+                  <h5 id="date" class="d-none">date</h5>
                  </div>
                 
         
@@ -85,29 +85,76 @@
 
     </div>
 
-
+  
 
   </div>
 
 
-
+ 
   
-
-
-
+<div class="future-forecast d-none">
   
+<div class="weather-forecast" id="weather-forecast">
+  <div class="weather-forecast-item">
+    <div class="day" id="tue">Tue</div>
+    <div class="images-icons"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"></div>
+    <div class="temp text-center" >Temp <span class="mintemp"></span>-<span class="maxtemp"></span></div>
+    <div class="description" ></div>
+  </div>
+  <div class="weather-forecast-item">
+    <div class="day">Wed</div>
+    <div class="images-icons"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"></div>
+    <div class="temp text-center" >Temp <span class="mintemp"></span>-<span class="maxtemp"></span></div>
+    <div class="description"></div>
+  </div>
+  <div class="weather-forecast-item">
+    <div class="day">Thur</div>
+    <div class="images-icons"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"></div>
+    <div class="temp text-center" >Temp <span class="mintemp"></span>-<span class="maxtemp"></span></div>
+    <div  class="description"></div>
+  </div>
+  <div class="weather-forecast-item">
+    <div class="day">Fri</div>
+    <div class="images-icons"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"></div>
+    <div class="temp text-center" >Temp <span class="mintemp"></span>-<span class="maxtemp"></span></div>
+    <div  class="description"></div>
+  </div>
+  <div class="weather-forecast-item">
+    <div class="day">Sat</div>
+    <div class="images-icons"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"></div>
+    <div class="temp text-center" >Temp <span class="mintemp"></span>-<span class="maxtemp"></span></div>
+    <div  class="description"></div>
+  </div>
+  <div class="weather-forecast-item">
+    <div class="day">Sun</div>
+    <div class="images-icons"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"></div>
+    <div class="temp text-center" >Temp<span class="mintemp"></span>-<span class="maxtemp"></span></div>
+    <div  class="description"></div>
+  </div>
+ 
+</div>
 
+</div>
 
 
 
       
-   
+
+
+
+
+
+
+
+
+
+
 
     
 
 
 
- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
