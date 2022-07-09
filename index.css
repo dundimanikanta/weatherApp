@@ -3,11 +3,10 @@
  
 
    background-image: linear-gradient(to right bottom, #4d99e7, #83aced, #abbff2, #ccd5f7, #e9ebfc);
-    /* background-image: url(neda-astani-KWTkd7mHqKE-unsplash.jpg); */
-    /* Full height */
+   
   height: 100vh;
 
-  /* Center and scale the image nicely */
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,13 +24,14 @@
 
 
 #data-container{
-     background-color:rgba( 24 , 24, 27 ,0.6); 
+   
     background-image: url('background.jpg');  
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px thin black;
     border-radius:10px; 
+    
 }
 
 #formdiv{
@@ -90,6 +90,8 @@ input[type=text]{
   padding:10px;
 }
 
+
+
 @media (max-width:770px){
     
 .weather-item{
@@ -99,4 +101,102 @@ input[type=text]{
    
 
 }
+}
+
+@media (max-width:556px){
+    
+    .weather-item{
+        
+          padding-left:50px;
+          padding-right:50px;
+       
+    
+    }
+    }
+
+
+
+
+
+
+#current-container{
+    margin-bottom: 50px;
+}
+
+
+.future-forecast{
+    background: #5d9fe9;
+    padding:25px;
+    /* position: fixed; */
+    bottom: 0;
+    display: flex;
+    color: #fff;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+ 
+
+
+.future-forecast .weather-forecast{
+display: flex;
+}
+
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border:1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    background:rgba(1,1,1,0.3);
+}
+
+.weather-forecast .weather-forecast-item .day{
+    padding: 5px 15px;
+    /* background: #00D6E4; */
+    border-radius: 50px;
+    text-align: center;
+}
+
+.weather-forecast .weather-forecast-item .temp{
+    font-weight: 100;
+    font-size: 13.5px;
+}
+
+
+
+
+@media only screen and (max-width:730px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+    .container{
+        padding: 20px;
+    }
+    .future-forecast .today{
+        padding-right: 50px;
+    }
+    .future-forecast .today .temp{
+        font-size: 16px;
+    }
+
+
+
+}
+
+@media only screen and (max-width:1400px) {
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
 }
