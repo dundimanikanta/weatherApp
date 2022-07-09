@@ -41,8 +41,12 @@ getmylocation.addEventListener('click',async ()=>{
            }
 
         } ;
+
+
           weatherdata();
           const updatedata= () =>{
+            document.querySelector('#date').textContent=window.moment(data.dt*1000).format('LL');
+            document.querySelector('#date').classList.remove('d-none');
             document.querySelector('#locationName').textContent = data.name;
             document.querySelector('#temp').innerHTML='<i class="bi bi-thermometer-half"></i>'+data.main.temp+"&#8451";
             document.querySelector('#desc').textContent=data.weather[0].main;
@@ -136,7 +140,9 @@ getmylocation.addEventListener('click',async ()=>{
                   document.querySelector("body").style.backgroundImage ="default.jpg";
                  break;
              }
-      
+
+
+              
 
           }    
 
@@ -152,6 +158,121 @@ getmylocation.addEventListener('click',async ()=>{
 });
 
 
+///////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+getmylocation.addEventListener('click',async ()=>{
+   document.querySelector('.future-forecast').classList.remove('d-none');
+   if(navigator.geolocation)
+   {
+       navigator.geolocation.getCurrentPosition(pos=>{
+          console.log(pos);
+         longit=pos.coords.longitude;
+         latit=pos.coords.latitude;
+         console.log(longit);
+         console.log(latit);
+
+        let futuredata;
+
+
+         futureapi=`https://api.openweathermap.org/data/2.5/onecall?lat=${latit}&lon=${longit}&exclude=hourly,minutely&units=metric&appid=c122071759372fcecdaa35a2bb850043`;
+
+         const weatherfuturedata=async()=>{
+           try{
+           const res2=await fetch(futureapi);
+            futuredata=await res2.json();
+           
+            console.log(futuredata);
+            updatefuturedata();
+        
+          
+             } catch(e){
+           console.log("error",e);
+              }
+        
+           } ;
+
+
+           
+             weatherfuturedata();
+             const updatefuturedata= ()=>
+              {     
+                    const days=document.querySelectorAll('.day');  
+                    let daystemp=1;
+                    days.forEach((e)=>{
+                       e.textContent=window.moment(futuredata.daily[`${daystemp}`].dt*1000).format('LL');
+                       daystemp++;
+                   })
+                      
+                   const minTemps=document.querySelectorAll('.mintemp')
+                   let mintemp=1;
+                   minTemps.forEach((e)=>{
+                       e.innerHTML='<i class="bi bi-thermometer-half"></i>'+futuredata.daily[`${mintemp}`].temp.min+"&#8451";
+                       mintemp++;
+                   })
+
+                   const maxTemps=document.querySelectorAll('.maxtemp')
+                   let maxtemp=1;
+                   maxTemps.forEach((e)=>{
+                       e.innerHTML=futuredata.daily[`${maxtemp}`].temp.max+"&#8451";
+                       maxtemp++;
+                   })
+
+                   const descs=document.querySelectorAll('.description');
+                   let descstemp=1;
+                   descs.forEach((e)=>{
+                       e.textContent=futuredata.daily[`${descstemp}`].weather[0].description;
+                       descstemp++;
+                   })
+
+                   const imageicons=document.querySelectorAll('.images-icons');
+                   let iconstemp=1;
+                   imageicons.forEach((e)=>{
+                       e.innerHTML=`<img src="http://openweathermap.org/img/wn/${futuredata.daily[`${iconstemp}`].weather[0].icon}@2x.png" alt="weather icon" class="w-icon"></img>`;
+                       iconstemp++;
+                   })
+                       
+              }
+
+       }) 
+
+
+
+       
+       
+   }  
+
+   
+   
+   
+  
+});
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////
+
+
 
 let data2;
 
@@ -159,6 +280,8 @@ const form = document.querySelector("form");
 
  form.addEventListener('submit',(e)=>{
    e.preventDefault();
+   document.querySelector('.future-forecast').classList.add('d-none');
+   document.querySelector('#date').classList.add('d-none');
    
 
 const cityname = document.querySelector("#cityname");
@@ -184,7 +307,7 @@ const feedback = document.querySelector("#feedback");
     weatherdata2();
 
     const updatedata2=()=>{
-     
+      
       document.querySelector('#locationName').textContent=data2.name;
       document.querySelector('#temp').innerHTML='<i class="bi bi-thermometer-half"></i>'+data2.main.temp+"&#8451";
       document.querySelector('#desc').textContent=data2.weather[0].main;
