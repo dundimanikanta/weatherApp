@@ -1,7 +1,16 @@
 .body{ 
-    background-color: rgb(206, 222, 215);
+    
+ 
 
-    background-image: url(neda-astani-KWTkd7mHqKE-unsplash.jpg);
+   background-image: linear-gradient(to right bottom, #4d99e7, #83aced, #abbff2, #ccd5f7, #e9ebfc);
+    /* background-image: url(neda-astani-KWTkd7mHqKE-unsplash.jpg); */
+    /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -11,8 +20,17 @@
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: azure;
-    border: 2px  solid black;
+    
+}
+
+
+#data-container{
+     background-color:rgba( 24 , 24, 27 ,0.6); 
+    background-image: url('background.jpg');  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px thin black;
     border-radius:10px; 
 }
 
@@ -36,7 +54,49 @@
    margin-top:20px;
 }
 #details-section{
-
+    color:black;
     margin-top:50px;
 }
+  #current-weather-items{
+    display:flex;
+     flex-direction: column;
+    justify-content: center;
+       
+}  
 
+.abc{
+    display:inline-block
+}
+
+.weather-item{
+    display: flex;
+    justify-content: space-between;
+
+   
+
+}
+
+button{
+    border:none;
+    background-color: rgba(24,24,27,0);
+}
+button:hover{
+    transform: scale(1.2);
+}
+input[type=text]{
+  height: 30px;
+  border-radius:50px;
+  border: none;
+  padding:10px;
+}
+
+@media (max-width:770px){
+    
+.weather-item{
+    
+      padding-left:100px;
+      padding-right:100px;
+   
+
+}
+}
