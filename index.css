@@ -1,17 +1,16 @@
-.body{ 
+body{ 
     
- 
-
    background-image: linear-gradient(to right bottom, #4d99e7, #83aced, #abbff2, #ccd5f7, #e9ebfc);
    
-  height: 100%;
-    background-size:100% 100%;
-
-  
-  background-position: center;
+  height:100%; 
+  background-size:100% 100%;
+  background-position:center;
   background-repeat: no-repeat;
-  background-size: cover;
+  padding-top:20px;
+ /* padding-bottom:80px; */
+  
 }
+
 
 #mainnavbar{
    height:50px;
@@ -22,7 +21,7 @@
   justify-content: center;
    padding-top:10px;
    padding-bottom:10px;
-
+ margin-bottom: 30px;;
 }
 
 #section img{
@@ -52,7 +51,7 @@
     background-size: cover;
     border: 2px thin black;
     border-radius:10px; 
-    
+    padding-bottom:20px;
 }
 
 #formdiv{
@@ -92,8 +91,6 @@
 .weather-item{
     display: flex;
     justify-content: space-between;
-
-   
 
 }
 
